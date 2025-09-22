@@ -49,8 +49,6 @@ public class JSONTranslator implements Translator {
                 JSONObject countryData = jsonArray.getJSONObject(i);
                 String countryCode = countryData.getString("alpha3");
 
-                List<String> languages = new ArrayList<>();
-
                 countryCodes.add(countryCode);
 
                 // iterate through the other keys to get the information that we need
@@ -60,8 +58,8 @@ public class JSONTranslator implements Translator {
 
                         translations.put(languageCode + "-" + countryCode,  countryData.getString(key));
 
-                        if (!languages.contains(languageCode)) {
-                            languages.add(languageCode);
+                        if (!languageCodes.contains(languageCode)) {
+                            languageCodes.add(languageCode);
                         }
                     }
                 }
