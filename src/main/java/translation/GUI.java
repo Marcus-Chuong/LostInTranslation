@@ -21,19 +21,32 @@ public class GUI {
             List<String> countryCodes = translator.getCountryCodes();
             List<String> languageCodes = translator.getLanguageCodes();
 
+            // Convert country codes to country names for dropdown
+            CountryCodeConverter countryCodeConverter = new CountryCodeConverter();
+            List<String> countryNames = countryCodes
+                    .stream()
+                    .map(countryCodeConverter::fromCountryCode)
+                    .collect(Collectors.toList());
+            JComboBox<String> countryField = new JComboBox<>(countryNames.toArray(new String[0]));
+            countryPanel.add(new JLabel("Country:"));
+            countryPanel.add(countryField);
+
+            // Convert language codes to language names for scrollable list
+            JPanel languagePanel = new JPanel();
             LanguageCodeConverter languageCodeConverter = new LanguageCodeConverter();
             List<String> languageNames = languageCodes
                     .stream()
                     .map(languageCodeConverter::fromLanguageCode)
                     .collect(Collectors.toList());
-            JComboBox countryField = new JComboBox(languageNames.toArray());
-            countryPanel.add(new JLabel("Country:"));
-            countryPanel.add(countryField);
 
-            JPanel languagePanel = new JPanel();
-            JTextField languageField = new JTextField(10);
+            // Create a scrollable list for languages
+            JList<String> languageList = new JList<>(languageNames.toArray(new String[0]));
+            languageList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            JScrollPane languageScrollPane = new JScrollPane(languageList);
+            languageScrollPane.setPreferredSize(new java.awt.Dimension(200, 100));
+
             languagePanel.add(new JLabel("Language:"));
-            languagePanel.add(languageField);
+            languagePanel.add(languageScrollPane);
 
             JPanel buttonPanel = new JPanel();
             JButton submit = new JButton("Submit");
@@ -49,14 +62,19 @@ public class GUI {
             submit.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String language = languageField.getText();
+                    String selectedLanguage = languageList.getSelectedValue();
                     String country = (String)countryField.getSelectedItem();
+
+                    if (selectedLanguage == null) {
+                        resultLabel.setText("Please select a language!");
+                        return;
+                    }
 
                     // for now, just using our simple translator, but
                     // we'll need to use the real JSON version later.
                     Translator translator = new CanadaTranslator();
 
-                    String result = translator.translate(country, language);
+                    String result = translator.translate(country, selectedLanguage);
                     if (result == null) {
                         result = "no translation found!";
                     }

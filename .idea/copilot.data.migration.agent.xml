@@ -3,6 +3,7 @@
   <component name="AgentMigrationStateService">
     <option name="pendingSessionIds">
       <option value="75a1473b-6149-4fd5-81dd-71eafb7c218a" />
+      <option value="bdb5b791-968a-4b3b-89c0-f79877c47a69" />
     </option>
     <option name="pendingTurns">
       <map>
@@ -13,12 +14,22 @@
             </set>
           </value>
         </entry>
+        <entry key="bdb5b791-968a-4b3b-89c0-f79877c47a69">
+          <value>
+            <set>
+              <option value="b14d0963-9dee-40a7-8cd8-1e988574ef22" />
+              <option value="704dd399-585d-4edc-bcf6-46a95d25e761" />
+              <option value="90ea4ab5-84db-4649-8008-f1e34fad1982" />
+            </set>
+          </value>
+        </entry>
       </map>
     </option>
     <pendingWorkingSetItems>
-      <entry key="75a1473b-6149-4fd5-81dd-71eafb7c218a">
+      <entry key="75a1473b-6149-4fd5-81dd-71eafb7c218a" />
+      <entry key="bdb5b791-968a-4b3b-89c0-f79877c47a69">
         <set>
-          <option value="file://$PROJECT_DIR$/src/main/java/translation/JSONTranslator.java" />
+          <option value="file://$PROJECT_DIR$/src/main/java/translation/GUI.java" />
         </set>
       </entry>
     </pendingWorkingSetItems>
