@@ -65,6 +65,9 @@ public class GUI {
                     String selectedLanguage = languageList.getSelectedValue();
                     String country = (String)countryField.getSelectedItem();
 
+                    String countryCode = countryCodeConverter.fromCountry(country);
+                    String languageCode = languageCodeConverter.fromLanguage(selectedLanguage);
+
                     if (selectedLanguage == null) {
                         resultLabel.setText("Please select a language!");
                         return;
@@ -72,9 +75,9 @@ public class GUI {
 
                     // for now, just using our simple translator, but
                     // we'll need to use the real JSON version later.
-                    Translator translator = new CanadaTranslator();
+                    Translator translator = new JSONTranslator();
 
-                    String result = translator.translate(country, selectedLanguage);
+                    String result = translator.translate(countryCode, languageCode);
                     if (result == null) {
                         result = "no translation found!";
                     }
