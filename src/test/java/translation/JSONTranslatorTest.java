@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JSONTranslatorTest {
 
-    JSONTranslator jsonTranslator = new JSONTranslator();
+    translation.JSONTranslator jsonTranslator = new translation.JSONTranslator();
 
     @Test
     public void getLanguageCodes() {
