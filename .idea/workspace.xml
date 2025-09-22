@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bcae8ea-d496-45ff-a9ba-cef124ac1b95" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/translation/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/translation/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/translation/CountryCodeConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/translation/CountryCodeConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/translation/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/translation/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/translation/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/translation/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/translation/LanguageCodeConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/translation/LanguageCodeConverter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

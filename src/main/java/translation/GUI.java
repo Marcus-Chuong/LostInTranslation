@@ -21,12 +21,12 @@ public class GUI {
             List<String> countryCodes = translator.getCountryCodes();
             List<String> languageCodes = translator.getLanguageCodes();
 
-            LanguageCodeConverter languageCodeConverter = new LanguageCodeConverter();
-            List<String> languageNames = languageCodes
+            CountryCodeConverter countryCodeConverter = new CountryCodeConverter();
+            List<String> countryNames = countryCodes
                     .stream()
-                    .map(languageCodeConverter::fromLanguageCode)
+                    .map(countryCodeConverter::fromCountryCode)
                     .collect(Collectors.toList());
-            JComboBox countryField = new JComboBox(languageNames.toArray());
+            JComboBox countryField = new JComboBox(countryNames.toArray());
             countryPanel.add(new JLabel("Country:"));
             countryPanel.add(countryField);
 
